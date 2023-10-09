@@ -23,15 +23,19 @@ html {
 body {
   margin: 0;
 }
+
 body nav {
   max-width: 100%;
   margin: auto;
+  display: block; 
+  clear: both;
 }
 
 body main {
   max-width: 80%;
   margin: auto;
 }
+
 
 /**
  * Render the `main` element consistently in IE.
@@ -63,7 +67,17 @@ hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: none !important;
 }
+
+body main hr {
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -358,11 +372,26 @@ template {
 }
 
 /* The styles for the navigation menu */
+#nav_menu {
+  position: fixed;
+  top: 15%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #2C32B4;
+  text-align: center;
+}
+
+
+
+
 #nav_menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+   overflow: hidden;
   position: relative;
+  background-color: #2C32B4;
 }
 
 #nav_menu ul li {
@@ -373,9 +402,9 @@ template {
 #nav_menu ul li a {
   display: block;
   text-align: center;
-  padding: 1em 0;
+  padding: 14px 16px;
   text-decoration: none;
-  background-color: #2C32B4;
+  
   color: white;
   font-weight: normal;
   font-size: 20px; 
@@ -409,15 +438,43 @@ template {
 #nav_menu ul li a:hover {
   font-weight: bold; 
   text-transform: uppercase; 
+  background-color: #111;
 }
+
+
 
 
 /* header */
-header h1 {
-  text-align: center;
-	color: #8C00A2;
-  text-shadow: 1px 3px 4px #390042;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; /* To keep it on top of other content */
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 0 2em 0;
+  border-bottom: 3px solid #2C32B4;
+  background: linear-gradient(30deg, #A9A9A9 0%, #2C32B4 30%, #77a7cd 50%, #A9A9A9 80%, #f6bb73 100%);
 }
+
+
+
+header h1 {
+  color: #8C00A2;
+  text-shadow: 1px 3px 4px #390042;
+  margin: 0; /* Remove default margin */
+}
+
+header img {
+  height: 80px;
+  margin-right: 10px;
+}
+
+
+
 
 #borderbox {
   display: inline-block; 
@@ -457,6 +514,7 @@ header h1 {
 /* global background */
 body {
   background-color: #B0C4DE;
+  padding-top: 200px; 
 }
 
 #section-list{
@@ -483,6 +541,8 @@ footer {
   clear: both;
   max-width: 80%;
   margin: auto;
+  padding-top: 5%
+  ;
 }
 
 .donate {
